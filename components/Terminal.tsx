@@ -1,21 +1,41 @@
 import React, { useState } from 'react';
 import Terminal, { ColorMode, TerminalOutput } from 'react-terminal-ui';
+import styled from 'styled-components';
 
-const TerminalController = (props = {}) => {
-  const [terminalLineData, setTerminalLineData] = useState([
-    <TerminalOutput>Welcome to the React Terminal UI Demo!</TerminalOutput>,
-  ]);
+const TerminalStyler = styled.div`
+  width: 100%;
+  > div {
+    background: transparent;
+    height: 100%;
+    border-radius: 0;
+    &:before {
+      display: none;
+    }
+  }
+  .react-terminal {
+    height: 100%;
+    justify-content: flex-start;
+  }
+`;
+
+const Tui = (props = {}) => {
+  const [terminalLineData, setTerminalLineData] = useState([]);
   return (
-    <div className="container">
+    <TerminalStyler>
       <Terminal
-        name="React Terminal Usage Example"
-        colorMode={ColorMode.Light}
+        name="=== Idiotbox ==="
+        colorMode={ColorMode.Dark}
+        prompt="Ξ"
         onInput={(terminalInput) =>
-          console.log(`New terminal input received: '${terminalInput}'`)
+          setTerminalLineData([
+            ...terminalLineData,
+            <TerminalOutput>{terminalInput}</TerminalOutput>,
+          ])
         }
       >
         {terminalLineData}
       </Terminal>
-    </div>
+    </TerminalStyler>
   );
 };
+export default Tui;

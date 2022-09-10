@@ -5,7 +5,10 @@ const GlobalStyle = createGlobalStyle`
   ${normalize()}
   html,
   body {
-    color: ${({ theme }) => theme.colors.primary};
+    background: #2d3436;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
