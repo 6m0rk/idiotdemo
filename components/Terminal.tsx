@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Terminal, { ColorMode, TerminalOutput } from 'react-terminal-ui';
 import styled from 'styled-components';
 import ReactTerminal, { ReactThemes } from 'react-terminal-component';
 import {
