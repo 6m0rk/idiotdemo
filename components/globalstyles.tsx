@@ -1,6 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize()}
   html,
   body {
     color: ${({ theme }) => theme.colors.primary};
@@ -18,6 +20,6 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
