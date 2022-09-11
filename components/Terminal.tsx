@@ -5,8 +5,18 @@ import { EmulatorState } from 'javascript-terminal';
 import { fs } from '../commands';
 
 const TerminalStyler = styled.div`
+  height: 26vh;
+  padding: 0 4vw 8vh;
+  overflow: hidden;
   > div {
     height: 100%;
+    background: transparent;
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+  }
+  input {
+    background: transparent;
   }
 `;
 // creating the emulator state and passing it
