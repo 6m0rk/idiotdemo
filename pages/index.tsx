@@ -13,13 +13,13 @@ export default function Home() {
         <meta name="description" content="A box filled with idiot." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Overlay />
       <Container>
         <Screen>
           <code>setting up commands to interact with this area</code>
         </Screen>
         <Tui />
       </Container>
+      <Overlay />
     </>
   );
 }
