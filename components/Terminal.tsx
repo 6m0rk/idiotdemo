@@ -1,41 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ReactTerminal, { ReactThemes } from 'react-terminal-component';
-import {
-  EmulatorState,
-  OutputFactory,
-  CommandMapping,
-  EnvironmentVariables,
-  FileSystem,
-  History,
-  Outputs,
-  defaultCommandMapping,
-} from 'javascript-terminal';
-
-const customState = EmulatorState.create({
-  fs: FileSystem.create({
-    '/home': {},
-    '/home/README': { content: 'This is a text file' },
-    '/home/nested/directory': {},
-    '/home/nested/directory/file': { content: 'End of nested directory!' },
-  }),
-});
+import { EmulatorState } from 'javascript-terminal';
+import { fs } from '../commands';
 
 const TerminalStyler = styled.div`
   > div {
     height: 100%;
   }
 `;
+// creating the emulator state and passing it
+// custom emulators
+const customState = EmulatorState.create({ ...fs });
 
-const Tui = () => {
+// Terminal User Interface
+export default function Tui() {
   return (
     <TerminalStyler>
-      <ReactTerminal
-        theme={ReactThemes.dye}
-        inputStr="ls"
-        emulatorState={customState}
-      />
+      <ReactTerminal theme={ReactThemes.dye} emulatorState={customState} />
     </TerminalStyler>
   );
-};
-export default Tui;
+}

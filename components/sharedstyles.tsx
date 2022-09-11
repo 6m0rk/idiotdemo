@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// some shared basic components
+// any of these components should ideally live in a seperate lib
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;

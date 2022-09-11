@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
+// sets some default styles and normalizes the css
+
 const GlobalStyle = createGlobalStyle`
   ${normalize()}
   html,
